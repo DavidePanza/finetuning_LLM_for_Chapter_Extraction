@@ -9,6 +9,7 @@ from utils import add_random_spacing
 # =======================
 
 def generate_systemic_noise_layout():
+    """Generates a layout for systemic noise in a book."""
     # section noise
     number_sections = random.choices([1,2,3], weights=[.5,.35,.15], k=1)[0] 
     text_sections_noise = ["Exercises", "References",  "Bibliography", "Notes", "Further Reading", "Contents", "Tables"]
@@ -123,15 +124,8 @@ def generate_text_noise(toc_noise):
     return words_subset
 
 
-def generate_random_noise(toc_noise, chunk_type="symbols"):
-    """
-    Generate a chunk of noise text
-    
-    Args:
-        chunk_type: Type of noise - "symbols", "numbers",  "page_numbers", 
-                   "formatting", "text"
-    """
-    # chunk_size = random.randint(*chunk_size_range)
+def generate_random_noise(chunk_type="symbols", toc_noise=None):
+    """Generate random noise based on the specified chunk type."""
     
     if chunk_type == "random":
         chunk_type = random.choice([

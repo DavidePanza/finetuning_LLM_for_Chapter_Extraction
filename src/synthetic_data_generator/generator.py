@@ -1,10 +1,11 @@
 import logging
 import random
 import numpy as np
-from utils import create_weighted_generator, add_random_spacing
+from utils import create_weighted_generator
 from chapters_layout import generate_chapter_layout, format_chapter
 from subchapters_layout import format_subchapter
 from noise_generators import generate_systemic_noise_layout, format_systemic_noise, generate_random_noise
+from labels import format_labels
 
 
 def generate_synthetic_data(json_data,
@@ -28,7 +29,6 @@ def generate_synthetic_data(json_data,
         
         # set new book name for each book
         logging.debug("\nNew book:")
-        book_name = book["name"]
         number_of_chapters = book["chapters_counts"]
         current_chapter = {}
         prompt = ""
