@@ -112,7 +112,7 @@ def generate_synthetic_data(json_data,
                         actual_chapter_number = chapter["number"]
                         
                         # define subchapters params
-                        counter_ids = chapter_number + .1
+                        counter_ids = 1
                         page_range = end_page - start_page
                         
                         # adjust number of subchapters based on page range
@@ -134,12 +134,13 @@ def generate_synthetic_data(json_data,
                         for idx_sub, subchapter_id in enumerate(subchapters_ids):
                             for subchapter in chapter['subchapters']:
                                 if subchapter["number"] == subchapter_id:
+                                    subchapter_number = f"{chapter_number}.{counter_ids}"
                                     prompt += format_subchapter(subchapter["title"], 
-                                                                counter_ids, 
+                                                                subchapter_number, 
                                                                 subchapters_pages[idx_sub], 
                                                                 use_numbers, 
                                                                 add_page)
-                                    counter_ids = round(counter_ids + 0.1, 1)     
+                                    counter_ids += 1    
                                     add_random_noise_to_subchapters = random.choices([0, 1], weights=[1-subchapter_random_noise, subchapter_random_noise], k=1)[0]
                                     if add_random_noise_to_subchapters:
                                         prompt += generate_random_noise('subchapters', toc_noise) + "\n"           
