@@ -62,10 +62,10 @@ Run `generate_synthetic_data.ipynb` locally to create custom training data with 
 **Important**: The following notebooks are optimized for Google Colab and should be run there:
 
 1. **Fine-tune the Model**:
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/finetuning.ipynb)
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidePanza/finetuning_LLM_for_Chapter_Extraction/blob/main/notebooks/finetuning.ipynb)
 
 2. **Benchmark Performance**:
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/YOUR_REPO/blob/main/notebooks/models_benchmarking.ipynb)
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidePanza/finetuning_LLM_for_Chapter_Extraction/blob/main/notebooks/models_benchmarking.ipynb)
 
 ### Pre-trained Model
 
