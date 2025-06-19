@@ -1,4 +1,6 @@
 data/
 synthetic_data/
+notebooks/trash/
 .env
 notes.md
+__pycache__/
