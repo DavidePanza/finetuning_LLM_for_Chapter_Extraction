@@ -4,3 +4,5 @@ notebooks/trash/
 .env
 notes.md
 __pycache__/
+.DS_Store
+src/.DS_Store
