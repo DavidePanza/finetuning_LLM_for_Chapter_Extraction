@@ -1,5 +1,4 @@
-data/
-synthetic_data/
+data(books)/
 notebooks/trash/
 .env
 notes.md
