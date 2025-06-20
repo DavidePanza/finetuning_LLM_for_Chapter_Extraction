@@ -70,7 +70,7 @@ Run `generate_synthetic_data.ipynb` locally to create custom training data with 
 ### Pre-trained Model
 
 A fine-tuned 16-bit merged version is available on Hugging Face:
-🤗 [Fine-tuned TOC Extractor Model](https://huggingface.co/YOUR_USERNAME/YOUR_MODEL_NAME)
+🤗 [Fine-tuned TOC Extractor Model](https://huggingface.co/davidepanza/qwen3-0.6b-instruct-chapter-extraction)
 
 ## 📁 Project Structure
 
