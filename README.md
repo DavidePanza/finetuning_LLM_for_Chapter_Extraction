@@ -109,7 +109,7 @@ The fine-tuned model demonstrates significant improvements:
 - ✅ **Consistent JSON output** with required fields
 - ✅ **Content filtering** ignores exercises, decorative elements, standalone numbers
 
-## 🤝 Contributing
+<!-- ## 🤝 Contributing
 
 Contributions welcome! You can:
 - Add your own `.docx` files to extend the dataset
@@ -118,4 +118,4 @@ Contributions welcome! You can:
 
 ---
 
-**Ready to fine-tune?** Click the Colab badges above to get started! 🚀
+**Ready to fine-tune?** Click the Colab badges above to get started! 🚀 -->
