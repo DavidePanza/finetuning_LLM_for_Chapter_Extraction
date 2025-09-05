@@ -1,8 +1,10 @@
-# 🚀 TOC Extraction Fine-Tuning Pipeline
+# TOC Extraction Fine-Tuning Pipeline
 
-A complete pipeline for fine-tuning language models to extract structured table of contents (TOC) from noisy, real-world documents. This project transforms imperfect TOC text into clean, structured JSON format using parameter-efficient LoRA fine-tuning.
+This project focuses on using fine-tuning to improve the performance of a small LLM (0.6B parameters) on a challenging task: producing structured output. Specifically, the model is trained to extract relevant information from books’ tables of contents—including title, start page, and end page—in JSON format. This task is particularly difficult for small models due to the high variability in the layout of books’ tables of contents.
 
-## 🎯 What It Does
+This repository provides a complete pipeline for fine-tuning language models to extract structured tables of contents (TOC) from noisy, real-world documents. Using parameter-efficient LoRA fine-tuning, the project transforms imperfect TOC text into clean, structured JSON format.
+
+## What It Does
 
 Fine-tunes **Qwen3-0.6B** to robustly parse messy table of contents and extract:
 - Chapter numbers and titles
@@ -11,7 +13,7 @@ Fine-tunes **Qwen3-0.6B** to robustly parse messy table of contents and extract:
 
 The model learns to handle OCR artifacts, formatting inconsistencies, random characters, and missing information commonly found in real document TOCs.
 
-## 📊 Key Results
+## Results
 
 **Before Fine-tuning**: Base model struggles with page ranges and noisy inputs
 ```json
@@ -23,7 +25,7 @@ The model learns to handle OCR artifacts, formatting inconsistencies, random cha
 {"chapter_number": "1", "start_page": 25, "end_page": 67}  // ✅ Correct end_page calculation
 ```
 
-## 🛠️ Pipeline Overview
+## Pipeline Overview
 
 ### 1. **Data Processing** (`load_distilled_data.ipynb`)
 - Converts LLM-distilled `.docx` files to structured JSON
@@ -45,7 +47,7 @@ The model learns to handle OCR artifacts, formatting inconsistencies, random cha
 - Side-by-side comparison of base vs fine-tuned models
 - Demonstrates improved page range calculation and noise handling
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Google Colab account with GPU runtime
@@ -72,7 +74,7 @@ Run `generate_synthetic_data.ipynb` locally to create custom training data with 
 A fine-tuned 16-bit merged version is available on Hugging Face:
 🤗 [Fine-tuned TOC Extractor Model](https://huggingface.co/davidepanza/qwen3-0.6b-instruct-chapter-extraction)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── notebooks/
@@ -86,14 +88,14 @@ A fine-tuned 16-bit merged version is available on Hugging Face:
 └── README.md
 ```
 
-## 🎯 Use Cases
+## Use Cases
 
 - **Document Processing Pipelines**: Extract chapter structure from academic papers, technical manuals
 - **Digital Library Systems**: Automatically structure document collections  
 - **Publishing Workflows**: Process manuscripts with inconsistent formatting
 - **Research Applications**: Handle noisy OCR outputs from scanned documents
 
-## 🔧 Technical Details
+## Technical Details
 
 - **Base Model**: Qwen3-0.6B (4-bit quantization)
 - **Training Method**: LoRA adapters (r=16, α=32)
@@ -101,7 +103,7 @@ A fine-tuned 16-bit merged version is available on Hugging Face:
 - **Training Time**: ~1-2 hours on Colab T4 GPU
 - **Memory Efficient**: 4-bit quantization + gradient checkpointing
 
-## 📈 Performance Improvements
+## Performance Improvements
 
 The fine-tuned model demonstrates significant improvements:
 - ✅ **Accurate page range calculation** (end_page = next_start_page - 1)
